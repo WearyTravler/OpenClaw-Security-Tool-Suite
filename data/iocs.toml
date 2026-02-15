@@ -1,0 +1,24 @@
+# Known-bad Indicators of Compromise
+# Update this file with new threat intelligence
+
+[publishers]
+# Blocked ClawHub publisher accounts
+blocked = [
+    "malicious-user-123",
+    "clawhavoc-campaign",
+]
+
+[c2_servers]
+# Known C2 infrastructure
+domains = [
+    "evil-c2.example.com",
+]
+ips = [
+    "198.51.100.1",
+]
+
+[skill_hashes]
+# SHA-256 hashes of known malicious skills
+blocked = [
+    "abc123...",
+]

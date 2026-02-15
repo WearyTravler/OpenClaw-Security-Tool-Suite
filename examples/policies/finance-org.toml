@@ -1,0 +1,17 @@
+# Example: Finance organization policy
+
+[general]
+policy_name = "finance-org"
+version = "1.0"
+
+[skill_sources]
+allow_bundled = true
+allow_clawhub_verified = true
+# Only allow from verified corp GitHub
+allow_github_repos = [
+    "myfinancecorp/openclaw-skills",
+]
+
+[enforcement]
+quarantine_unknown = true
+manual_approval_required = true

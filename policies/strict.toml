@@ -1,0 +1,21 @@
+# Strict Lockdown Policy
+
+[general]
+policy_name = "strict"
+version = "1.0"
+
+[skill_sources]
+allow_bundled = true
+allow_clawhub_verified = false
+allow_github_repos = []
+
+[enforcement]
+quarantine_unknown = true
+manual_approval_required = true
+block_non_bundled = true  # Completely block non-bundled skills
+
+[monitoring]
+gateway_tap = true
+filesystem_watch = true
+process_monitor = true
+network_monitor = true

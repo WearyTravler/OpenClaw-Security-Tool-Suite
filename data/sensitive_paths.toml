@@ -1,0 +1,21 @@
+# Protected file paths - agent blocks reads to these
+
+[[paths]]
+pattern = "**/.env"
+description = "Environment files with secrets"
+action = "block"
+
+[[paths]]
+pattern = "**/.aws/credentials"
+description = "AWS credentials"
+action = "block"
+
+[[paths]]
+pattern = "**/.ssh/id_*"
+description = "SSH private keys"
+action = "block"
+
+[[paths]]
+pattern = "**/openclaw/.env"
+description = "OpenClaw configuration"
+action = "block"

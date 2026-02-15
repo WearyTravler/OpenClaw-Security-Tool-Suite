@@ -1,0 +1,26 @@
+# Default Chitinwall Security Policy
+
+[general]
+policy_name = "default"
+version = "1.0"
+
+[skill_sources]
+# Allow bundled skills and verified publishers
+allow_bundled = true
+allow_clawhub_verified = true
+allow_github_repos = [
+    "openclaw/skills-official",
+]
+
+[enforcement]
+# Block unknown skills by default
+quarantine_unknown = true
+# Require manual approval for non-bundled skills
+manual_approval_required = true
+
+[monitoring]
+# Enable all monitoring features
+gateway_tap = true
+filesystem_watch = true
+process_monitor = true
+network_monitor = true

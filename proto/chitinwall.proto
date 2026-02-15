@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package chitinwall;
+
+service ChitinwallService {
+  rpc ReportEvent(Event) returns (EventResponse);
+  rpc QueryPolicy(PolicyRequest) returns (PolicyResponse);
+  rpc ReportSkill(SkillReport) returns (SkillResponse);
+}
+
+message Event {
+  string endpoint_id = 1;
+  string event_type = 2;
+  int64 timestamp = 3;
+  bytes payload = 4;
+}
+
+message EventResponse {
+  bool accepted = 1;
+  string message = 2;
+}
+
+message PolicyRequest {
+  string endpoint_id = 1;
+  string skill_name = 2;
+}
+
+message PolicyResponse {
+  bool allowed = 1;
+  repeated string blocked_actions = 2;
+}
+
+message SkillReport {
+  string endpoint_id = 1;
+  string skill_name = 2;
+  string skill_hash = 3;
+  bytes skill_content = 4;
+}
+
+message SkillResponse {
+  bool safe = 1;
+  repeated string threats = 2;
+  string action = 3;  // "allow", "quarantine", "block"
+}

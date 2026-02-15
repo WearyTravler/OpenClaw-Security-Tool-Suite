@@ -1,0 +1,29 @@
+# Detection Pattern Library
+
+[[patterns]]
+name = "base64-payload"
+description = "Base64-encoded payload followed by shell execution"
+regex = 'echo\s+[A-Za-z0-9+/=]{50,}\s*\|\s*base64\s+-d\s*\|\s*(?:bash|sh)'
+severity = "critical"
+category = "command-injection"
+
+[[patterns]]
+name = "reverse-shell"
+description = "Reverse shell connection syntax"
+regex = 'bash\s+-i\s*>&\s*/dev/tcp/[\d.]+/\d+'
+severity = "critical"
+category = "command-injection"
+
+[[patterns]]
+name = "credential-exfil"
+description = "Credential file exfiltration"
+regex = 'curl.*-d.*(?:\.env|\.aws|\.ssh|id_rsa)'
+severity = "critical"
+category = "exfiltration"
+
+[[patterns]]
+name = "prompt-injection-bypass"
+description = "Prompt injection safety bypass"
+regex = '(?i)(?:ignore|disregard|forget).*(?:previous|above|prior).*(?:instructions|rules|constraints)'
+severity = "high"
+category = "prompt-injection"
