@@ -1,2 +1,2 @@
 # Openclaw_AV
-an AV or EDR solution to monitor Openclaw agents on Windows
+A Kit of Tools to monitor, analyze, and detect malicious skills on an openclaw agent in Windows-based operating systems.
